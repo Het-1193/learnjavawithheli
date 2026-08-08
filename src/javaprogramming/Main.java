@@ -323,7 +323,28 @@ public class Main{
         //Exception handling in java
         //Java version has: try-catch-finally-throw-throws
 
-        
+        /*
+        try: holds risky block of code
+        catch: handles the exception thrown by the try block
+        finally: executes the code after try-catch block regardless of whether an exception is thrown or not
+        throw: used to throw an exception explicitly # basically raise of python
+        throws: used to declare the exceptions that a method can throw
+        */
+
+        try {
+            //int result = 10 / 0; // Risky code (ArithmeticException)
+            throw new Exception("Locked in");
+            //at one time only onw whill be raised in this so put one in comment to run either one
+
+        } catch (ArithmeticException | NumberFormatException e) { // catching multiple excceptions at once using | operator0
+        System.out.println("\nCannot divide by zero!"); // Runs ONLY if ArithmeticException happens
+        } catch (Exception e) {
+        System.out.println("\nExceptional: " + e.getMessage()); // or just write e only but get message is used to get the message of the exception
+        } finally {
+        System.out.println("This ALWAYS runs no matter what."); // Cleanup code
+        }
+
+        //not using thows now cuz its used to declare the exceptions that a method can throw and we are not using any methods here so no need to use throws
 
 
     }
