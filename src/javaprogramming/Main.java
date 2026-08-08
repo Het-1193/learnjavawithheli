@@ -119,7 +119,54 @@ public class Main{
         int p = 100;
         //int fp= p + 18.0; this shows error cuz double is bigger than int and we are trying to assign a double value to an int variable
         int fp= p + (int)18.0; //explicit casting: converting a larger data type to a smaller data type
-        System.out.println(fp);
+        System.out.println(fp); //it simply removes all the decimal values and gives the integer value of the double value
+
+        /*Widening Casting (automatic) - converting a smaller type to a larger type size
+        byte -> short -> char -> int -> long -> float -> double
+        Narrowing Casting (manual) - converting a larger type to a smaller type size
+        double -> float -> long -> int -> char -> short -> byte*/
+
+        //Narrowing Casting (manual) - converting a larger type to a smaller type size
+
+        // double to float (loss of precision beyond ~7 decimals)
+        double myDouble = 3.1415926535;
+        float myFloat = (float) myDouble;    // 3.1415927
+
+        // float to long / int (truncates decimal part completely)
+        float price = 99.99f;
+        long roundedPrice = (long) price;    // 99
+        int intPrice = (int) price;          // 99
+
+        // int to short and byte (potential overflow)
+        int largeInt = 130;
+        short myShort = (short) largeInt;    // 130 (fits in 16-bit short)
+        byte myByte = (byte) largeInt;       // -126 (overflow! byte max is 127)
+
+        // int to char (maps numeric value to Unicode character)
+        int code = 65;
+        char letter = (char) code;           // 'A'
+
+        // char to short (char is unsigned 16-bit, short is signed 16-bit)
+        char symbol = 'Z';
+        short symbolCode = (short) symbol;   // 90
+
+        // String to Primitives (Parsing)
+        // String to int, double, boolean to do this you simply write the data type followed by .parseType("string") and it will convert the string to the respective data type
+        int one = Integer.parseInt("456");          // 456
+        double two = Double.parseDouble("3.14"); // 3.14
+        boolean three = Boolean.parseBoolean("true");// true
+
+        // Primitives to String
+        String four = String.valueOf(100);              // "100"
+        String five = Double.toString(9.99);         // "9.99"
+        String strFloat = Float.toString(4.56f);                 // "4.56"
+        //
+
+        final int birthday = 19; //final keyword is used to declare a constant variable which cannot be changed once assigned
+
+        /*Operators in java*/
+
+
 
 
     }
