@@ -6,7 +6,8 @@ and there are no name conflicts cuz there can be classes with same names in diff
 it makes like a proper organized folder structure
 */
 
-import java.util.Arrays; //importing the Arrays class from the java.util package to use its methods
+import java.util.Arrays; //importing the Arrays class from the java.util package to use its methods #used to perform various operations on arrays like sorting, searching, etc.
+import java.util.Scanner; //importing the Scanner class from the java.util package to use its methods #jused to take user input from the console
 
 //most things follow the came things as in C programming
 
@@ -133,7 +134,7 @@ public class Main{
         float myFloat = (float) myDouble;    // 3.1415927
 
         // float to long / int (truncates decimal part completely)
-        float price = 99.99f;
+        float price1 = 99.99f;
         long roundedPrice = (long) price;    // 99
         int intPrice = (int) price;          // 99
 
@@ -144,7 +145,7 @@ public class Main{
 
         // int to char (maps numeric value to Unicode character)
         int code = 65;
-        char letter = (char) code;           // 'A'
+        char letter1 = (char) code;           // 'A'
 
         // char to short (char is unsigned 16-bit, short is signed 16-bit)
         char symbol = 'Z';
@@ -164,10 +165,109 @@ public class Main{
 
         final int birthday = 19; //final keyword is used to declare a constant variable which cannot be changed once assigned
 
-        /*Operators in java*/
+        /*Operators in java are same as in any other language and logical operators are like C. small potato stuff*/
 
+        /*Conditional Statements*/
+        boolean sunisup = true;
+        if (sunisup == true)// not necessary to write == true, if(sunisup) is enough it will automatically check if the boolean variable is true  and if you want to cheack for false then just write !sunisup
+            System.out.println("day");
+        else
+            System.out.println("night");
 
+        //taking user input in java using Scanner class
+        Scanner sc = new Scanner(System.in); //creating an object of Scanner class
+        //sc is name and new Scanner(System.in) is the constructor of Scanner class which takes input from the console(keyboard) (System.in is the standard input stream which is used to take input from the console)        
+        //Other options: read from file using File, or directly write in the string or from interner/network using: Socket.getInputStream() or URL.openStream() etc.
+        //use BufferReader if you want to read large amount of data from the console cuz it is faster than Scanner class
+        //use console class if you want to read password from the console cuz it does not show the password on the console (console.readPassword() method) but it is not available in all IDEs so use Scanner class instead
 
+        //pen=10 and notebook=40
+
+      
+    /*
+        //now lets take input
+        System.out.print("Enter the cash you have: ");
+        int cash=sc.nextInt(); //taking integer input from the user using nextInt() method of Scanner class
+
+    */
+
+        /*
+        scanner.nextLine() : Reads a full sentence/text
+        scanner.next() : Reads just a single word 
+        scanner.nextInt() : Reads a whole number 
+        scanner.nextDouble() : Reads a decimal number 
+        scanner.nextBoolean() : Reads true or false.
+        */
+
+/*
+
+        System.out.println("Cash: "+cash); //printing the input taken from the user
+
+        if (cash>=50)
+            System.out.println("You can buy a notebook");
+        else if (cash>=10)
+            System.out.println("You can buy a pen");
+        else
+            System.out.println("You cannot buy anything");
+    
+        //example of other type of input:
+
+        sc.nextLine();
+        
+        System.out.println("Enter your fav qoute: ");
+        String quote=sc.nextLine(); //taking string input from the user using nextLine()
+
+        System.out.println("Quote of the day: "+quote); //printing the input taken from the user
+
+        String name2=sc.next(); //taking string input from the user using next() method of Scanner class
+        System.out.println("Name: "+name2); //printing the input taken from the user
+
+        int num1=sc.nextInt(); //taking integer input from the user using nextInt() method of Scanner class
+        System.out.println("Number: "+num1); //printing the input taken from the user
+
+        double num3=sc.nextDouble(); //taking double input from the user using nextDouble() method of Scanner class
+        System.out.println("Number: "+num3); //printing the input taken from the user
+
+        Boolean bool=sc.nextBoolean(); //taking boolean input from the user using nextBoolean() method of Scanner class
+        System.out.println("Boolean: "+bool); //printing the input taken from the user
+    
+*/
+
+        //switch case in java
+
+        System.out.print("Enter the day of the week (1-7): ");
+        int day = sc.nextInt();
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day of the week");
+        }
+        
+        
+        sc.close(); //closing the scanner object to prevent memory leak
+
+        
 
     }
 }
