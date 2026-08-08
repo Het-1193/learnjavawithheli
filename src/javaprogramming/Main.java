@@ -183,7 +183,6 @@ public class Main{
 
         //pen=10 and notebook=40
 
-      
     /*
         //now lets take input
         System.out.print("Enter the cash you have: ");
@@ -235,6 +234,8 @@ public class Main{
 
         //switch case in java
 
+/*
+
         System.out.print("Enter the day of the week (1-7): ");
         int day = sc.nextInt();
 
@@ -263,11 +264,67 @@ public class Main{
             default:
                 System.out.println("Invalid day of the week");
         }
-        
-        
+
+*/        
+        //Loops in java
+        //these are same as in C
+
+        //for loop in java
+        int i;
+        System.out.print("Numbers: ");
+        for(i=0;i<=10;i++){
+            System.out.print(i);
+        }
+
+        //while loop in java
+        i=0;
+        System.out.print("\nNumbers: ");
+        while(i<=10){
+            System.out.print(i);
+            i+=1;
+        }
+
+        System.out.print("\nNumbers: ");
+        //do while loop in java
+        i=0;
+        do {
+            System.out.print(i);
+            i+=1;
+        } while(i<=10);
+
         sc.close(); //closing the scanner object to prevent memory leak
 
+        //Break and continue statements in java
+
+        //using break statement in java
+        i=0;
+        System.out.print("\nNumbers: ");
+        while(i<=10){
+            if(i==5){
+                break; //break statement is used to exit the loop
+            }
+            System.out.print(i);
+            i+=1;
+        }
+
+
+        //using continue statement in java
+        i=0;
+        System.out.print("\nNumbers: ");
+        while(i<=10){
+            if(i==5){
+                i+=1;
+                continue; //continue statement is used to skip the current iteration of the loop
+            }
+            System.out.print(i);
+            i+=1;
+        }
+
+        //Exception handling in java
+        //Java version has: try-catch-finally-throw-throws
+
         
+
 
     }
 }
