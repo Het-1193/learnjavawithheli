@@ -1,7 +1,7 @@
 package javaprogramming;
 
 /*
-defining the package so that the it knows what we are refering to;
+defining the package so that the it knows what we are referring to;
 and there are no name conflicts cuz there can be classes with same names in different folders
 it makes like a proper organized folder structure
 */
@@ -14,16 +14,19 @@ import java.util.Arrays; //importing the Arrays class from the java.util package
 defining the public class
 it should be named same as the file name
 there is only one public class in a file
-it is accessible anywhere unlike smiple class which is accessible only in its package
+
+it is accessible anywhere unlike simple class which is accessible only in its package
 it contains the main method, variables/properties, methods/functions,
 */
 
 /*Making first class */
 public class Main{
 
-   /* defining the main method which is the entery point that JVM looks for to begin execution */
+   /* defining the main method which is the entry point that JVM looks for to begin execution */
+
     public static void main(String[] args){//main method = PSVM P-Access modifier, S-Static, V-Void(return type), M-Main(method name), String[] args (Parameter)
         //static keyword:  indicates that a particular member (variable, method, block, or nested class) belongs to the class itself rather than to individual instances (objects) of that class
+     
         /*Printing in java */
         System.out.print("Hello World"); //SOP used to print
         System.out.println("Hello Hetvi"); //SOPln used to print and leave a line after it
@@ -40,6 +43,7 @@ public class Main{
         
         /*Primitive data types in java */
         //have fixed size and are stored in stack memory
+
         byte num=30;
         short num2=30000;
         int phone=123456789;
@@ -50,7 +54,8 @@ public class Main{
         boolean isJavaFun=true; //boolean data type can be true or false
 
         //printing multiple variables in a single line
-        //conactination of variables is done using + operator
+        //concatenation of variables is done using + operator
+
         System.out.println("Name: "+name+" Age: "+age+" Phone: "+phone+" Pi: "+pi+" Letter: "+letter+" Is Java Fun: "+isJavaFun);
 
         /*Non-primitive data types in java */
@@ -59,19 +64,22 @@ public class Main{
 
         //have variable size and are stored in heap memory
         //new keyword is used to create a new object in heap memory
+
         String who= new String("Aman"); // a new boject is created in heap memory and the reference is stored in stack memory
+
         String where="India";//no new object is created in heap memory and the reference is stored in stack memory
-        
+    
         //string functions in java
+
         System.out.println("length of name: "+name.length()); // length function : returns the length of the string
-        System.out.println(name.charAt(0)); //char at fucntion : returns the character at the specified index
+        System.out.println(name.charAt(0)); //char at function : returns the character at the specified index
         System.out.println(name.indexOf("t")); //index of function : returns the index of the specified character
         System.out.println(name.substring(0,3)); //substring function : returns the substring from the specified index to the specified index
         System.out.println(name.toUpperCase()); //to upper case function : returns the string in upper case
         System.out.println(name.toLowerCase()); //to lower case function : returns the string in lower case
         System.out.println(name.replace("h","H")); //replace function : replaces the specified character with the specified character
 
-        //array in java
+        /*array in java*/
         
         int[] arr = new int[5]; //defining an array of integers with size 5
         arr[0] = 90;
@@ -79,17 +87,40 @@ public class Main{
         arr[2] = 70;
         arr[3] = 60;
         arr[4] = 50; //defining an array of integers with size 5 and initializing it with values
+        
+        //array functions and stuff
 
         System.out.println(arr); //printing the array will print the reference of the array in heap memory not the values of the array
         System.out.println(arr[0]); //printing the value at index 0 of the array
 
-        String[] names = {"Aman","Hetvi","Riya"}; //defining an array of strings with size 3 and initializing it with values
+        System.out.println("Original Array: "+Arrays.toString(arr)); //toString function of array class: converts the array to string and returns it
+
+        String[] names = {"Aman","Hetvi","Riya"}; //defining an array of strings with size 3 and initializing it with values # doent require new keyword it automatically does the work.
         System.out.println(names[0]); //printing the value at index 0 of the array
 
         System.out.println("length of array: "+arr.length); //length of array : returns the length of the array #this is an property of arrays not a function so no () is used
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
+        Arrays.sort(arr); //sort function of array class: sorts the array
+        System.out.println("Sorted Array: "+Arrays.toString(arr));
+
+        //2 D Array
+        int[][] marks={{90,85,100},{45,68,78}};
+        System.out.println(marks[0][1]);
+        System.out.println(Arrays.toString(marks)); //this dos'nt work in case of multidimensional array it'll just print the reference of the array in heap memory not the values of the array
+        System.out.println("2D Array: "+Arrays.deepToString(marks)); //deepToString function : used to print multidimensional arrays
+
+        /*Casting in java
+        casting is used to convert one data type to another data type*/
+
+        //Implicit casting: converting a smaller data type to a larger data type
+        double price = 9.78;
+        double fprice = price + 50; //implicit casting
+        System.out.println(fprice);
+
+        int p = 100;
+        //int fp= p + 18.0; this shows error cuz double is bigger than int and we are trying to assign a double value to an int variable
+        int fp= p + (int)18.0; //explicit casting: converting a larger data type to a smaller data type
+        System.out.println(fp);
+
 
     }
-
 }
