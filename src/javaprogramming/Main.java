@@ -7,7 +7,7 @@ it makes like a proper organized folder structure
 */
 
 import java.util.Arrays; //importing the Arrays class from the java.util package to use its methods #used to perform various operations on arrays like sorting, searching, etc.
-import java.util.Scanner; //importing the Scanner class from the java.util package to use its methods #jused to take user input from the console
+import java.util.Scanner; //importing the Scanner class from the java.util package to use its methods #used to take user input from the console
 
 //most things follow the came things as in C programming
 
@@ -23,11 +23,29 @@ it contains the main method, variables/properties, methods/functions,
 /*Making first class */
 public class Main{
 
+    //functions area
+
+        //simple function    
+        public static void printjava(){
+            System.out.println("Java is fun!");
+        }
+
+        //function with parameters
+        public static void printname(String name){
+            System.out.println("Hello "+name);
+        }
+
+        public static void printsum(int a, int b){
+            System.out.println("Sum: "+(a+b));
+        }
+
+
+
    /* defining the main method which is the entry point that JVM looks for to begin execution */
 
     public static void main(String[] args){//main method = PSVM P-Access modifier, S-Static, V-Void(return type), M-Main(method name), String[] args (Parameter)
         //static keyword:  indicates that a particular member (variable, method, block, or nested class) belongs to the class itself rather than to individual instances (objects) of that class
-     
+    
         /*Printing in java */
         System.out.print("Hello World"); //SOP used to print
         System.out.println("Hello Hetvi"); //SOPln used to print and leave a line after it
@@ -169,7 +187,7 @@ public class Main{
 
         /*Conditional Statements*/
         boolean sunisup = true;
-        if (sunisup == true)// not necessary to write == true, if(sunisup) is enough it will automatically check if the boolean variable is true  and if you want to cheack for false then just write !sunisup
+        if (sunisup == true)// not necessary to write == true, if(sunisup) is enough it will automatically check if the boolean variable is true  and if you want to check for false then just write !sunisup
             System.out.println("day");
         else
             System.out.println("night");
@@ -213,7 +231,7 @@ public class Main{
 
         sc.nextLine();
         
-        System.out.println("Enter your fav qoute: ");
+        System.out.println("Enter your fav quote: ");
         String quote=sc.nextLine(); //taking string input from the user using nextLine()
 
         System.out.println("Quote of the day: "+quote); //printing the input taken from the user
@@ -292,7 +310,7 @@ public class Main{
             i+=1;
         } while(i<=10);
 
-        sc.close(); //closing the scanner object to prevent memory leak
+        //sc.close(); //closing the scanner object to prevent memory leak // closed it later so that we can use it later for taking input from the user
 
         //Break and continue statements in java
 
@@ -320,7 +338,8 @@ public class Main{
             i+=1;
         }
 
-        //Exception handling in java
+        //Exception handling in 
+        
         //Java version has: try-catch-finally-throw-throws
 
         /*
@@ -334,9 +353,9 @@ public class Main{
         try {
             //int result = 10 / 0; // Risky code (ArithmeticException)
             throw new Exception("Locked in");
-            //at one time only onw whill be raised in this so put one in comment to run either one
+            //at one time only one will be raised in this so put one in comment to run either one
 
-        } catch (ArithmeticException | NumberFormatException e) { // catching multiple excceptions at once using | operator0
+        } catch (ArithmeticException | NumberFormatException e) { // catching multiple exceptions at once using | operator0
         System.out.println("\nCannot divide by zero!"); // Runs ONLY if ArithmeticException happens
         } catch (Exception e) {
         System.out.println("\nExceptional: " + e.getMessage()); // or just write e only but get message is used to get the message of the exception
@@ -344,8 +363,34 @@ public class Main{
         System.out.println("This ALWAYS runs no matter what."); // Cleanup code
         }
 
-        //not using thows now cuz its used to declare the exceptions that a method can throw and we are not using any methods here so no need to use throws
+        //not using throws now cuz its used to declare the exceptions that a method can throw and we are not using any methods here so no need to use throws
 
+        //Function/Methods in java
+        //used for repetitive tasks and to make the code more readable and organized
 
+        //these are written at the top and called her cuz you cannot write a method inside one method (public static void main (Strings[] args))
+        /*but there are ways to do it if you wanna:
+        1. By local inner class: You can define a local inner class inside a method and then define methods inside that inner class. (these are for more complex actions/calculations with multiple variables and methods and stuff) big potato
+        2. Lambda expressions (Java 8 and later): If you're using Java 8 or later, you can use lambda expressions to define small functions inside methods. (these are short one liner ones for simple small action/calculation) small potato
+        */ 
+
+        printjava(); //calling the function
+        printjava(); //calling the function again
+
+        //Scanner sc = new Scanner(System.in)
+
+        System.out.print("Enter your name: ");
+        String n=sc.nextLine(); //taking string input from the user using nextLine() method of Scanner class
+
+        printname(n);
+
+        System.out.print("Enter value of a:");
+        int a = sc.nextInt(); //taking integer input from the user using nextInt() method of Scanner class
+        System.out.print("Enter value of b:");   
+        int b = sc.nextInt(); //taking integer input from the user using nextInt() method of Scanner class
+
+        printsum(a,b);
+
+        sc.close();
     }
 }
