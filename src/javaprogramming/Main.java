@@ -392,5 +392,19 @@ public class Main{
         printsum(a,b);
 
         sc.close();
+
+        //using math class in java
+        //Math class is a built-in class in java which contains methods for performing basic numeric operations such as exponentiation, logarithms, square roots, and trigonometric functions.
+
+        System.out.println("Square root of 16: "+Math.sqrt(16)); //sqrt function : returns the square root of the number
+        System.out.println("Power of 2^3: "+Math.pow(2,3)); //pow function : returns the value of the first number raised to the power of the second number
+        System.out.println("Absolute value of -10: "+Math.abs(-10)); //abs function : returns the absolute value of the number
+        System.out.println("Maximum of 10 and 20: "+Math.max(10,20)); //max function : returns the maximum of the two numbers
+        System.out.println("Minimum of 10 and 20: "+Math.min(10,20)); //min function : returns the minimum of the two numbers
+        System.out.println("Random number between 0 and 1: "+Math.random()); //random function : returns a random number between 0.0 (inclusive) and 1.0 (exclusive)
+        System.out.println("Random number between 0 and 100: "+(int)(Math.random()*100)); //random number between 0 and 100 
+        
+
+
     }
 }
